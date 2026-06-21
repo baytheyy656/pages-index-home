@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>温和抵达 · 华体会</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: linear-gradient(165deg, #fdefe6 0%, #f7d9c4 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 1.5rem;
+    }
+
+    .card {
+      max-width: 840px;
+      width: 100%;
+      background: rgba(255, 250, 245, 0.85);
+      backdrop-filter: blur(2px);
+      border-radius: 48px 24px 48px 24px;
+      padding: 3.5rem 3rem;
+      box-shadow: 0 12px 40px rgba(170, 120, 90, 0.12), 0 4px 16px rgba(200, 150, 120, 0.08);
+      transition: all 0.25s ease;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 450;
+      letter-spacing: -0.02em;
+      color: #4e3b2e;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+
+    .subhead {
+      font-size: 1.05rem;
+      color: #7f6a5a;
+      margin-bottom: 2.2rem;
+      border-left: 4px solid #dbb494;
+      padding-left: 1.2rem;
+      font-style: italic;
+      font-weight: 350;
+    }
+
+    .body-text {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #3a2e25;
+      margin-bottom: 1.6rem;
+    }
+
+    .body-text strong {
+      font-weight: 500;
+      color: #5f4432;
+    }
+
+    .quote-block {
+      background: #f6ede5;
+      border-radius: 24px 12px 24px 12px;
+      padding: 1.6rem 2rem;
+      margin: 2rem 0 2.2rem 0;
+      font-size: 1.05rem;
+      color: #45362b;
+      border-left: 6px solid #c9a683;
+      box-shadow: inset 0 1px 4px rgba(0,0,0,0.02);
+    }
+
+    .quote-block p {
+      margin-bottom: 0.6rem;
+    }
+
+    .quote-block p:last-child {
+      margin-bottom: 0;
+    }
+
+    .quote-block cite {
+      display: block;
+      margin-top: 0.8rem;
+      font-style: normal;
+      font-size: 0.95rem;
+      color: #7b6655;
+    }
+
+    .link-wrap {
+      display: inline-block;
+      background: #dfc4b0;
+      color: #2e211b;
+      padding: 0.2rem 0.6rem;
+      border-radius: 24px;
+      text-decoration: none;
+      font-weight: 450;
+      transition: background 0.2s, transform 0.1s;
+      border-bottom: 2px solid transparent;
+    }
+
+    .link-wrap:hover {
+      background: #d3b49b;
+      border-bottom-color: #946f54;
+      transform: translateY(-1px);
+    }
+
+    a {
+      color: #6f4e35;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+      text-decoration-color: #c9a98b;
+      transition: color 0.2s;
+    }
+
+    a:hover {
+      color: #3d2b1e;
+      text-decoration-color: #8f6b4d;
+    }
+
+    .feature-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.8rem;
+      margin: 2.5rem 0 2rem;
+    }
+
+    .feature-item {
+      flex: 1 1 180px;
+      background: rgba(255, 245, 235, 0.7);
+      padding: 1.4rem 1.2rem;
+      border-radius: 28px 12px 28px 12px;
+      border: 1px solid #e6d5c6;
+      transition: background 0.2s;
+    }
+
+    .feature-item h3 {
+      font-size: 1.2rem;
+      font-weight: 440;
+      color: #4f3929;
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.01em;
+    }
+
+    .feature-item p {
+      font-size: 0.95rem;
+      color: #5d4b3d;
+      line-height: 1.5;
+    }
+
+    .faq-mini {
+      margin: 2.2rem 0 1.8rem;
+      border-top: 2px dashed #dcc6b5;
+      padding-top: 2rem;
+    }
+
+    .faq-item {
+      margin-bottom: 1.2rem;
+    }
+
+    .faq-q {
+      font-weight: 480;
+      font-size: 1.05rem;
+      color: #4b382a;
+      margin-bottom: 0.2rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .faq-q::before {
+      content: "⁉️";
+      font-size: 1.1rem;
+      margin-right: 0.6rem;
+      opacity: 0.7;
+    }
+
+    .faq-a {
+      padding-left: 2rem;
+      color: #5b4739;
+      font-size: 0.98rem;
+      line-height: 1.5;
+    }
+
+    .visit-note {
+      margin-top: 2.2rem;
+      padding: 1.2rem 1.8rem;
+      background: #f3e6dc;
+      border-radius: 40px 12px 40px 12px;
+      font-size: 1.05rem;
+      color: #382c23;
+      text-align: center;
+    }
+
+    .visit-note span {
+      background: #e1cdbb;
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      display: inline-block;
+      margin-top: 0.4rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e3d2c2;
+      margin: 1.8rem 0;
+      opacity: 0.5;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 2.2rem 1.6rem;
+        border-radius: 32px 16px 32px 16px;
+      }
+      h1 {
+        font-size: 1.9rem;
+      }
+      .subhead {
+        font-size: 0.95rem;
+        padding-left: 0.8rem;
+      }
+      .body-text {
+        font-size: 1rem;
+      }
+      .feature-item {
+        flex: 1 1 100%;
+      }
+      .quote-block {
+        padding: 1.2rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>华体会 · 稳定如常</h1>
+    <div class="subhead">一次温和的索引，一种持续的连接</div>
+
+    <p class="body-text">
+      每当想要回到一个熟悉的地方，我们总希望路径是清晰、平缓且可靠的。正是出于这样的想法，我们为<a href="https://index-home-hth.com.cn" class="link-wrap">华体会</a>准备了这个简单的介绍页——不是作为一扇需要用力推开的门，而是作为一张折叠整齐的便签，提醒你那份不变的地址。
+    </p>
+
+    <p class="body-text">
+      很多时候，我们需要的只是一个安静的开端：没有弹窗的催促，没有闪烁的诱导，只有一行可以被信任的标识。这个页面所做的，就是把这些冗余的噪声过滤掉，留下唯一有用的信息——那个叫做<strong>华体会</strong>的站点，以及它始终如一的落脚点。
+    </p>
+
+    <div class="quote-block">
+      <p>“导航的价值不在于它有多少条路，而在于它愿意把每一条路都指认清楚。华体会的意义也相似——它并不喧哗，只是稳稳地待在那里，等待需要的人。” </p>
+      <cite>—— 摘自一次产品内部的随笔</cite>
+    </div>
+
+    <p class="body-text">
+      从第一天起，这个站点就保持着最简单的结构：一个页面，一个链接，一份说明。没有花哨的动效，没有复杂的菜单。因为在我们看来，<strong>稳定入口</strong>本身就是最好的体验。当你把某个地址记在心里，最怕的就是它某一天忽然变了模样——而我们希望这份页面恰好能给你一种“不会变”的安心。
+    </p>
+
+    <div class="feature-grid">
+      <div class="feature-item">
+        <h3>温和界面</h3>
+        <p>暖色渐变与圆润卡片，让视线自然放松，没有压迫感。</p>
+      </div>
+      <div class="feature-item">
+        <h3>单一指向</h3>
+        <p>仅保留一个核心链接，避免信息过载，使命纯粹。</p>
+      </div>
+      <div class="feature-item">
+        <h3>轻量承载</h3>
+        <p>页面大小控制在数十KB，任何网络环境都能快速展开。</p>
+      </div>
+    </div>
+
+    <p class="body-text">
+      如果你正在寻找一个可以长期依赖的去处，那么不妨把<a href="https://index-home-hth.com.cn" style="background: transparent; padding: 0; border-bottom: 2px dotted #b28d72; text-decoration: none;">华体会</a>记在书签里。它不是一个需要反复记忆的复杂地址，而是一个简单到几乎不会出错的组合。我们相信，越简洁的东西，越能经得起时间的磨损。
+    </p>
+
+    <div class="faq-mini">
+      <div class="faq-item">
+        <div class="faq-q">这个页面会更新吗？</div>
+        <div class="faq-a">原则上只做极少的内容调整，以保证链接的有效性。页面本身是介绍性质的，不会频繁变动。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">为什么只放一个链接？</div>
+        <div class="faq-a">因为最好的指引就是只给一条清晰的路。华体会的入口始终如一，不需要额外选择。</div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="visit-note">
+      如果你愿意，现在就可以去瞧瞧那个地方。<br>
+      <span><a href="https://index-home-hth.com.cn" style="color: #2f231b; text-decoration: none; font-weight: 450;">华体会</a></span>
+    </div>
+
+    <p style="text-align: right; margin-top: 2rem; font-size: 0.85rem; color: #8b7666; letter-spacing: 0.5px;">
+      页面说明 · 温和索引
+    </p>
+  </div>
+</body>
+</html>
