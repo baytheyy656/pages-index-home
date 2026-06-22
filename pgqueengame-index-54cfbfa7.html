@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赏金女王 · 简明指南与提醒</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(145deg, #f7d9aa 0%, #f5b982 45%, #e89f6e 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.2rem;
+        }
+
+        .story-card {
+            max-width: 820px;
+            width: 100%;
+            background: #fffcf7;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(160, 90, 20, 0.18), 0 6px 12px rgba(0, 0, 0, 0.05);
+            padding: 2.8rem 2.5rem;
+            transition: all 0.2s ease;
+            border: 1px solid rgba(255, 245, 230, 0.6);
+        }
+
+        @media (max-width: 540px) {
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+            .story-card {
+                padding: 1.8rem 1.2rem;
+                border-radius: 24px;
+            }
+        }
+
+        .opening-line {
+            font-size: 1.7rem;
+            font-weight: 350;
+            letter-spacing: 0.02em;
+            color: #794d29;
+            border-left: 4px solid #d89255;
+            padding-left: 1.2rem;
+            margin-bottom: 1.8rem;
+            line-height: 1.4;
+        }
+
+        .opening-line span {
+            font-weight: 550;
+            color: #5f3a1c;
+        }
+
+        .brief-note {
+            background: #fcf3e9;
+            padding: 1.3rem 1.6rem;
+            border-radius: 22px;
+            margin-bottom: 2.2rem;
+            color: #4e331e;
+            font-size: 1rem;
+            line-height: 1.7;
+            box-shadow: inset 0 1px 4px rgba(140, 80, 20, 0.04);
+        }
+
+        .brief-note a {
+            color: #a05f30;
+            text-decoration: none;
+            font-weight: 550;
+            border-bottom: 1px dotted #c6874e;
+            transition: border 0.15s, color 0.15s;
+        }
+
+        .brief-note a:hover {
+            color: #6b3e1c;
+            border-bottom: 1px solid #6b3e1c;
+        }
+
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin: 2.2rem 0 1.8rem;
+        }
+
+        .feature-item {
+            flex: 1 1 200px;
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 1.2rem 1.2rem 1.5rem;
+            box-shadow: 0 2px 8px rgba(120, 70, 20, 0.04);
+            border: 1px solid #f5e3d6;
+            transition: transform 0.15s;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(150, 80, 20, 0.08);
+            border-color: #e3c8b4;
+        }
+
+        .feature-item h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #633f24;
+            margin-bottom: 0.45rem;
+            letter-spacing: 0.01em;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .feature-item p {
+            font-size: 0.92rem;
+            color: #5f4a36;
+            line-height: 1.6;
+        }
+
+        .small-icon {
+            display: inline-block;
+            width: 0.85rem;
+            height: 0.85rem;
+            border-radius: 50%;
+            background: #dba97a;
+            margin-right: 4px;
+        }
+
+        .scene-block {
+            background: #f4e7db;
+            border-radius: 28px;
+            padding: 1.5rem 1.8rem;
+            margin: 1.8rem 0 1.5rem;
+            color: #3f2d1d;
+            line-height: 1.8;
+        }
+
+        .scene-block strong {
+            color: #784e2b;
+            font-weight: 550;
+        }
+
+        .tips-box {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 1.4rem 1.6rem;
+            margin-top: 1.2rem;
+            border: 1px solid #eddccc;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        .tips-box summary {
+            cursor: pointer;
+            font-weight: 500;
+            color: #7b522f;
+            font-size: 1.05rem;
+            padding: 0.2rem 0;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .tips-box summary::before {
+            content: "⏺";
+            color: #b67b4b;
+            font-size: 1.1rem;
+        }
+
+        .tips-box details[open] summary::before {
+            content: "⏹";
+        }
+
+        .tips-content {
+            margin-top: 1rem;
+            padding-left: 0.4rem;
+        }
+
+        .tips-content p {
+            margin-bottom: 0.6rem;
+            font-size: 0.98rem;
+            color: #4b3827;
+        }
+
+        .tips-content a {
+            color: #a05f30;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #dba375;
+            font-weight: 500;
+        }
+
+        .tips-content a:hover {
+            color: #5a351c;
+            text-decoration-color: #5a351c;
+        }
+
+        .closing-message {
+            margin-top: 2.2rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #ead7c6;
+            color: #5f432e;
+            font-size: 0.98rem;
+            line-height: 1.7;
+            text-align: left;
+        }
+
+        .closing-message a {
+            color: #8c5c34;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid #dba375;
+            transition: 0.1s;
+        }
+
+        .closing-message a:hover {
+            color: #4f311b;
+            border-bottom-color: #4f311b;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e9d6c2;
+            margin: 1.6rem 0 0.6rem;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="story-card">
+        <div class="opening-line">
+            <span>开始之前，</span>先从一个最简单的视角认识它。
+        </div>
+
+        <div class="brief-note">
+            如果你刚接触 <a href="https://pgqueengame.com">赏金女王</a>，可能会被各种介绍淹没。其实只需要记住一件事：这是一款以赏金为主题的节奏型游戏，没有复杂的成长线，每一局都接近独立的短程冒险。页面上的每一个选项都对应一个明确的玩法入口，不必担心走错路。
+        </div>
+
+        <div class="feature-grid">
+            <div class="feature-item">
+                <h3><span class="small-icon"></span> 直白规则</h3>
+                <p>开局即核心，没有冗长的教学。累积赏金、触发奖励环节，节奏由你掌控。</p>
+            </div>
+            <div class="feature-item">
+                <h3><span class="small-icon"></span> 场景递进</h3>
+                <p>每次进入都会遇到略有差异的视觉排布，但核心结构始终清晰——赏金女王的设计偏向稳重的体验递进。</p>
+            </div>
+            <div class="feature-item">
+                <h3><span class="small-icon"></span> 克制反馈</h3>
+                <p>没有夸张的全屏特效，奖励提示简洁，声音与画面的配合恰到好处，不打扰思考。</p>
+            </div>
+        </div>
+
+        <div class="scene-block">
+            <strong>一个具体的场景：</strong> 你打开页面，看到赏金面板与一排操作图标。第一次玩的时候可能会犹豫——该先点哪个？实际上，任何一条路径都会带出下一段提示。游戏内置了温和的引导，哪怕你完全不懂规则，跟着界面上的动态高亮走，两三分钟后自然就会熟悉。这也是为什么很多人说<a href="https://pgqueengame.com" style="color:#8c5c34;text-decoration:underline;text-underline-offset:3px;">赏金女王</a>适合在零碎时间里放松。
+        </div>
+
+        <div class="tips-box">
+            <details>
+                <summary>一些值得留意的细节</summary>
+                <div class="tips-content">
+                    <p>• 页面加载完成后，建议先让动画资源缓冲几秒，后续体验会更流畅。部分浏览器需要允许自动播放音频。</p>
+                    <p>• 赏金女王的界面语言默认为中文，但个别功能按钮保留了通用图标，和语言无关，放心点按。</p>
+                    <p>• 如果你是第一次访问，可以试着从中间的主按钮开始，它会带你进入最标准的流程。更多变体玩法可以在左侧菜单找到。</p>
+                    <p>• 有关账户或数据的问题，官方说明页有简短问答。不过多数情况下，刷新页面即可重置当前进程——这是单局设计的便利之处。</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="closing-message">
+            说到底，<a href="https://pgqueengame.com">赏金女王</a> 并不是那种需要攻略才能继续的游戏。它更像一个老朋友设计的桌游——规则印在盒盖内侧，玩一局就全记住了。花几分钟读完这段介绍，剩下的就交给手感吧。
+            <hr>
+            <span style="color:#90643e;opacity:0.75;font-size:0.85rem;">一局赏金，一段休憩。</span>
+        </div>
+    </div>
+</body>
+</html>
